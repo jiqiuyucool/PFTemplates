@@ -83,6 +83,7 @@
         if(i==0){
             [template.titleLabel setFont:fontMerriweatherHeavyItalic(11)];
         }
+        template.tag=i+1;
         [_scrollViewTemplates addSubview:template];
         [_scrollViewTemplates setContentSize:CGSizeMake(getRightView(template), self.frame.size.height)];
     }
@@ -99,7 +100,6 @@
 
     PFTemplateBtn *btnLocal=[[PFTemplateBtn alloc] initWithFrame:CGRectMake(index*95, 0, 95, 140) andTitle:strTitle andStrImg:strImgTemplate];
     [btnLocal addTarget:self action:@selector(targetTemplateBtn:) forControlEvents:UIControlEventTouchUpInside];
-    btnLocal.tag=index+1;
     
     if(index==0){
         _viewSel=[[UIView alloc] initWithFrame:CGRectMake(0, btnLocal.frame.size.height-6, btnLocal.frame.size.width-1, 6)];
