@@ -38,5 +38,16 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Merriweather-Black.otf</string>
+		<string>Merriweather-Bold.otf</string>
+		<string>Merriweather-BoldItalic.otf</string>
+		<string>Merriweather-HeavyItalic.otf</string>
+		<string>Merriweather-Italic.otf</string>
+		<string>Merriweather-Light.otf</string>
+		<string>Merriweather-LightItalic.otf</string>
+		<string>Merriweather-Regular.otf</string>
+	</array>
 </dict>
 </plist>

@@ -99,11 +99,12 @@
 
     PFTemplateBtn *btnLocal=[[PFTemplateBtn alloc] initWithFrame:CGRectMake(index*95, 0, 95, 140) andTitle:strTitle andStrImg:strImgTemplate];
     [btnLocal addTarget:self action:@selector(targetTemplateBtn:) forControlEvents:UIControlEventTouchUpInside];
+    btnLocal.tag=index+1;
     
     if(index==0){
         _viewSel=[[UIView alloc] initWithFrame:CGRectMake(0, btnLocal.frame.size.height-6, btnLocal.frame.size.width-1, 6)];
         _viewSel.backgroundColor=rgb2Color(143, 201, 207);
-        _viewSel.tag=index;
+        _viewSel.tag=index+1;
         [btnLocal addSubview:_viewSel];
     }
 
@@ -116,6 +117,11 @@
 #pragma mark Target template button
 -(void)targetTemplateBtn:(PFTemplateBtn *)sender
 {
+    PFTemplateBtn *templateBtn = (PFTemplateBtn *)[_scrollViewTemplates viewWithTag:_viewSel.tag];
+    if([templateBtn respondsToSelector:@selector(titleLabel)]){
+        [templateBtn.titleLabel setFont:fontMerriweatherItalic(11)];
+    }
+
     [_viewSel removeFromSuperview];
     _viewSel.alpha=0.0;
     _viewSel.tag=sender.tag;
@@ -124,7 +130,9 @@
         _viewSel.alpha=1.0;
     }];
     
-    
+   [sender.titleLabel setFont:fontMerriweatherHeavyItalic(11)];
+
+
     CGPoint modulo = [sender.superview convertPoint:sender.frame.origin toView:nil];
     
     if(modulo.x>=kWidth/2){

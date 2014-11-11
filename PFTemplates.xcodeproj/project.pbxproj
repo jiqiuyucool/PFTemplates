@@ -32,6 +32,14 @@
 		EAE7284B1A1179F700EB2CEF /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE728491A1179F700EB2CEF /* VPImageCropperViewController.m */; };
 		EAE7284E1A117B2B00EB2CEF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE7284D1A117B2B00EB2CEF /* Reachability.m */; };
 		EAE728511A117E3300EB2CEF /* PFImageViewCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE728501A117E3300EB2CEF /* PFImageViewCheck.m */; };
+		EAE728521A1187F800EB2CEF /* Merriweather-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE7283C1A1177B600EB2CEF /* Merriweather-Black.otf */; };
+		EAE728531A1187F800EB2CEF /* Merriweather-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE7283D1A1177B600EB2CEF /* Merriweather-Bold.otf */; };
+		EAE728541A1187F800EB2CEF /* Merriweather-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE7283E1A1177B600EB2CEF /* Merriweather-BoldItalic.otf */; };
+		EAE728551A1187F800EB2CEF /* Merriweather-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE7283F1A1177B600EB2CEF /* Merriweather-HeavyItalic.otf */; };
+		EAE728561A1187F800EB2CEF /* Merriweather-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE728401A1177B600EB2CEF /* Merriweather-Italic.otf */; };
+		EAE728571A1187F800EB2CEF /* Merriweather-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE728411A1177B600EB2CEF /* Merriweather-Light.otf */; };
+		EAE728581A1187F800EB2CEF /* Merriweather-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE728421A1177B600EB2CEF /* Merriweather-LightItalic.otf */; };
+		EAE728591A1187F800EB2CEF /* Merriweather-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EAE728431A1177B600EB2CEF /* Merriweather-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -321,6 +329,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE728521A1187F800EB2CEF /* Merriweather-Black.otf in Resources */,
+				EAE728531A1187F800EB2CEF /* Merriweather-Bold.otf in Resources */,
+				EAE728541A1187F800EB2CEF /* Merriweather-BoldItalic.otf in Resources */,
+				EAE728551A1187F800EB2CEF /* Merriweather-HeavyItalic.otf in Resources */,
+				EAE728561A1187F800EB2CEF /* Merriweather-Italic.otf in Resources */,
+				EAE728571A1187F800EB2CEF /* Merriweather-Light.otf in Resources */,
+				EAE728581A1187F800EB2CEF /* Merriweather-LightItalic.otf in Resources */,
+				EAE728591A1187F800EB2CEF /* Merriweather-Regular.otf in Resources */,
 				EAE7279E1A1171A600EB2CEF /* Main.storyboard in Resources */,
 				EAE727A31A1171A600EB2CEF /* LaunchScreen.xib in Resources */,
 				EAE727A01A1171A600EB2CEF /* Images.xcassets in Resources */,
@@ -502,6 +518,7 @@
 				EAE727B41A1171A600EB2CEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

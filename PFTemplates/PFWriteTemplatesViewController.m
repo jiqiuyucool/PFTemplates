@@ -17,7 +17,7 @@
 #import "PFImageView.h"
 #import "PFScrollView.h"
 
-@interface PFWriteTemplatesViewController () <VPImageCropperDelegate, UIAlertViewDelegate>
+@interface PFWriteTemplatesViewController () <VPImageCropperDelegate, UIAlertViewDelegate, PFScrollTemplatesDelegate>
 {
     PFImageView *imageViewTemplate;
     
@@ -50,9 +50,9 @@
 {
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:255.0/255.0 green:98.0/255.0 blue:98.0/255.0 alpha:1.0];
     self.navigationController.navigationBar.tintColor= [UIColor colorWithRed:255.0/255.0 green:98.0/255.0 blue:98.0/255.0 alpha:1.0];
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    self.navigationController.navigationBarHidden=NO;
+    self.navigationController.navigationBar.translucent=NO;
     self.view.backgroundColor=[UIColor whiteColor];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 #pragma mark Set navigation item
@@ -84,15 +84,15 @@
     }else{
         imageViewTemplate=[[PFImageView alloc] initWithFrame:CGRectMake(kWidth/2-60, 20, 120, 180)];
     }
-    [imageViewTemplate setImage:_imgChosen];
+    [imageViewTemplate setImage:[UIImage imageNamed:@"copertina1"]];
     [self.view addSubview:imageViewTemplate];
 
     
     templatesView=[[PFTemplatesViewController alloc] init];
-    templatesView.view.frame=CGRectMake(0, kHeight-200, kWidth, 264);
+    templatesView.view.frame=CGRectMake(0, kHeight-264, kWidth, 264);
     templatesView.imgCover=_imgChosen;
     [templatesView loadGraphics];
-//    templatesView.scrollTemplatesView.delegate=self;
+    templatesView.scrollTemplatesView.delegate=self;
 //    templatesView.colorTemplateView.delegate=self;
 //    templatesView.delegate=self;
     [self.view addSubview:templatesView.view];
