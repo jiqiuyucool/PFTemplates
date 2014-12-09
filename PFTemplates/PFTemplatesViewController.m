@@ -18,7 +18,7 @@
     [super viewDidLoad];
 }
 
-#pragma mark Load graphics
+#pragma mark - Load graphics
 -(void)loadGraphics
 {
     UIView *viewRiga=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 2)];
@@ -44,6 +44,7 @@
     }
 }
 
+#pragma mark - Tap on templates button
 -(void)templates
 {
     [self changeAnimatedArrow:_optionButtonsView.optionTemplateBtn.frame.size.width/2];
@@ -58,6 +59,7 @@
     }];
 }
 
+#pragma mark - Tap on color button
 -(void)colors
 {
     [self changeAnimatedArrow:_optionButtonsView.optionColorBtn.frame.origin.x+_optionButtonsView.optionColorBtn.frame.size.width/2];
@@ -73,6 +75,7 @@
     }];
 }
 
+#pragma mark - Tap on crop button
 -(void)crop
 {
     [self changeAnimatedArrow:_optionButtonsView.optionCropBtn.frame.origin.x+_optionButtonsView.optionCropBtn.frame.size.width/2];
@@ -84,6 +87,8 @@
     [self loadCrop];
 }
 
+
+//animate the arrow when the button is tapped
 -(void)changeAnimatedArrow:(float)x{
     [UIView animateWithDuration:0.2 animations:^{
         CGRect frame=_optionButtonsView.imgArrowSelectOption.frame;
@@ -92,7 +97,7 @@
     }];
 }
 
-#pragma mark Load graphics colors template
+#pragma mark - Load graphics colors template
 -(void)loadTemplateColors
 {
     for(id key in [_scrollTemplatesView.dataTemplates objectAtIndex:_scrollTemplatesView.viewSel.tag]){
@@ -106,6 +111,7 @@
 
 -(void)loadCrop
 {
+    //set the ratio of the crop section
     float ratio=0;
     int tag=(int)(_scrollTemplatesView.viewSel.tag);
     
@@ -164,8 +170,6 @@
         heightCrop=(250*heightRatio)/widthRatio;
     }
     
-    
-//    UIImage *portraitImg = [[TLUtils sharedInstance] imageByScalingToMaxSize:_imgCover];
     
     [_delegate cropTemplate:_imgCover andRectCrop:CGRectMake(self.view.frame.size.width/2-widthCrop/2, 80, widthCrop, heightCrop)];
 }

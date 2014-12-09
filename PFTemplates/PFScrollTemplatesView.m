@@ -25,7 +25,7 @@
         _scrollViewTemplates.backgroundColor=colorGray245;
         [self addSubview:_scrollViewTemplates];
         
-        
+        //all the colors of the template
         NSArray *arrayTemplateColors2=[[NSArray alloc] initWithObjects:@"8A8A8A",@"DD705D",@"DDC35D",@"619D65",@"90CBCB",@"5E85AC",@"C87994", nil];
         NSArray *arrayTemplateColors3=[[NSArray alloc] initWithObjects:@"DDDDDD",@"D7ADAD",@"D7C9AD",@"DAE9C9",@"C9E4E2",@"C9D4E4",@"D9D2E4", nil];
         NSArray *arrayTemplateColors4=[[NSArray alloc] initWithObjects:@"1E1E1E",@"792727",@"493214",@"2C512F",@"608F92",@"2A3C60",@"5C3E58", nil];
@@ -73,7 +73,7 @@
     return self;
 }
 
-#pragma mark Init button templates
+#pragma mark - Init button templates
 -(void)initTemplates
 {
     _indexColor=0;
@@ -114,7 +114,7 @@
 }
 
 
-#pragma mark Target template button
+#pragma mark - Target template button
 -(void)targetTemplateBtn:(PFTemplateBtn *)sender
 {
     PFTemplateBtn *templateBtn = (PFTemplateBtn *)[_scrollViewTemplates viewWithTag:_viewSel.tag];
@@ -140,6 +140,8 @@
     }else{
         [_scrollViewTemplates scrollRectToVisible:CGRectMake(sender.frame.origin.x-120, 0, _scrollViewTemplates.frame.size.width, _scrollViewTemplates.frame.size.height) animated:YES];
     }
+    
+    //here you should call a delegate method for the main viewcontroller to change the image
 }
 
 @end

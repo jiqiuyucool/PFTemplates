@@ -79,6 +79,7 @@
     imgCropped=nil;
     self.view.backgroundColor=[UIColor whiteColor];
     
+    //set the image of the template
     if(kHeight>480){
         imageViewTemplate=[[PFImageView alloc] initWithFrame:CGRectMake(kWidth/2-85, 20, 170, 255)];
     }else{
@@ -88,19 +89,19 @@
     [self.view addSubview:imageViewTemplate];
 
     
+    //set the templates view at the bottom
     templatesView=[[PFTemplatesViewController alloc] init];
     templatesView.view.frame=CGRectMake(0, kHeight-264, kWidth, 264);
     templatesView.imgCover=_imgChosen;
     [templatesView loadGraphics];
     templatesView.scrollTemplatesView.delegate=self;
-//    templatesView.colorTemplateView.delegate=self;
-//    templatesView.delegate=self;
     [self.view addSubview:templatesView.view];
     
     templateNumber=0;
     templateColor=rgb2Color(255, 255, 255);
 }
 
+#pragma mark - Template delegate
 -(void)templateCreated:(UIImage *)imgTemplate andNumber:(NSInteger)numberTemplate andColor:(UIColor *)colorTemplate
 {
     templateNumber=numberTemplate;
@@ -117,11 +118,10 @@
 -(void)colorSelected:(UIColor *)color
 {
     templateColor=color;
-    
 }
 
 
-#pragma mark VPImageCropperDelegate+
+#pragma mark - VPImageCropperDelegate+
 -(void)cropTemplate:(UIImage *)image andRectCrop:(CGRect)frame
 {
     VPImageCropperViewController *imgCropperVC = [[VPImageCropperViewController alloc] initWithImage:image cropFrame:frame limitScaleRatio:10.0];
