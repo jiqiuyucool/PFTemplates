@@ -21,7 +21,6 @@
 {
     PFImageView *imageViewTemplate;
     
-    
     PFTemplatesViewController *templatesView;
 
     NSInteger templateNumber;
@@ -58,11 +57,13 @@
 #pragma mark Set navigation item
 -(void)setNavigationItem
 {
+    //back button in the navigation bar
     PFBackBtn *backBtn=[[PFBackBtn alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
     [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *buttonsL = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = buttonsL;
     
+    //title in the navigation bar
     PFTitleLbl *lblTitle=[[PFTitleLbl alloc] initWithFrame:CGRectMake(0, 0, 140, 44)];
     lblTitle.text=NSLocalizedString(@"TEMPLATE", nil);
     self.navigationItem.titleView=lblTitle;
